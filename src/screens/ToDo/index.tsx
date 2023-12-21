@@ -4,18 +4,18 @@ import {
   EmptyListComponent,
   LogoImageSVG,
   TaskItem,
-} from "../Components";
+} from "../../Components";
 import { styles } from "./styles";
 import { FlatList, Text, View } from "react-native";
 
 export default function ToDo() {
-  const [tasks, setTasks] = React.useState([]);
+  const [tasks, setTasks] = React.useState<string[]>([]);
 
   return (
     <View style={styles.container}>
       <View style={styles.topSubContainer}>
         <LogoImageSVG />
-        <AddTaskInput />
+        <AddTaskInput tasks={tasks} setTasks={setTasks} />
       </View>
       <View style={styles.bottomSubContainer}>
         <View style={styles.countersContainer}>
@@ -30,9 +30,10 @@ export default function ToDo() {
         </View>
         <FlatList
           data={tasks}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <TaskItem />}
+          keyExtractor={(item, index) => `${item}-${index}`}
+          renderItem={({ item }) => <TaskItem task={item} />}
           ListEmptyComponent={() => <EmptyListComponent />}
+          showsVerticalScrollIndicator={false}
         />
       </View>
     </View>

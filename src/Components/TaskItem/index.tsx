@@ -3,13 +3,14 @@ import { styles } from "./styles";
 import { Text, View } from "react-native";
 import EmptyListImageSVG from "../EmptyListImageSVG";
 
-export default function ToDo() {
-  const [isAddTaskButtonPressed, setIsAddTaskButtonPressed] =
-    React.useState(false);
+type props = {
+  task: string;
+};
 
+export default function TaskItem({ task }: props) {
   return (
     <View>
-      <Text>task</Text>
+      <Text>{task}</Text>
     </View>
   );
 }

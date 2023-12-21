@@ -1,13 +1,30 @@
 import React from "react";
 import { styles } from "./styles";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TextInput, TouchableOpacity, View } from "react-native";
 import PlusImageSVG from "../PlusImageSVG";
 
-export default function ToDo() {
+type props = {
+  tasks: string[];
+  setTasks: React.Dispatch<React.SetStateAction<string[]>>;
+};
+
+export default function ToDo({ tasks, setTasks }: props) {
   const [isAddTaskButtonPressed, setIsAddTaskButtonPressed] =
     React.useState(false);
 
   const [isTextInputFocused, setIsTextInputFocused] = React.useState(false);
+  const [TextInputValue, setTextInputValue] = React.useState("");
+
+  const handleAddTask = () => {
+    if (TextInputValue.length <= 0) {
+      return Alert.alert(
+        "Tarefa vazia",
+        "Você precisa digitar uma tarefa para adicioná-la"
+      );
+    }
+    setTasks((prevStateTasks) => [...prevStateTasks, TextInputValue]);
+    setTextInputValue("");
+  };
 
   return (
     <View style={styles.inputContainer}>
@@ -21,6 +38,7 @@ export default function ToDo() {
         }}
         onFocus={() => setIsTextInputFocused(true)}
         onBlur={() => setIsTextInputFocused(false)}
+        onChangeText={setTextInputValue}
       />
       <TouchableOpacity
         style={{
@@ -30,6 +48,7 @@ export default function ToDo() {
         activeOpacity={1}
         onPressIn={() => setIsAddTaskButtonPressed(true)}
         onPressOut={() => setIsAddTaskButtonPressed(false)}
+        onPress={handleAddTask}
       >
         <PlusImageSVG />
       </TouchableOpacity>
