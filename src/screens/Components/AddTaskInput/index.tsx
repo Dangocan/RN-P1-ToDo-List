@@ -1,7 +1,7 @@
 import React from "react";
 import { styles } from "./styles";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import { PlusImageSVG } from "..";
+import PlusImageSVG from "../PlusImageSVG";
 
 export default function ToDo() {
   const [isAddTaskButtonPressed, setIsAddTaskButtonPressed] =
