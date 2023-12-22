@@ -14,7 +14,7 @@ export default function ToDo() {
   return (
     <View style={styles.container}>
       <View style={styles.topSubContainer}>
-        <LogoImageSVG />
+        <LogoImageSVG style={{ marginBottom: 14 }} />
         <AddTaskInput tasks={tasks} setTasks={setTasks} />
       </View>
       <View style={styles.bottomSubContainer}>
@@ -29,6 +29,7 @@ export default function ToDo() {
           </View>
         </View>
         <FlatList
+          style={styles.tasksList}
           data={tasks}
           keyExtractor={(item, index) => `${item}-${index}`}
           renderItem={({ item }) => <TaskItem task={item} />}

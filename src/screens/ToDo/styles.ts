@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    paddingTop: 48,
+    paddingTop: 60,
     backgroundColor: "#0D0D0D",
   },
   topSubContainer: {
@@ -13,17 +13,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     zIndex: 1,
   },
-  inputContainer: {
-    width: "100%",
-    flexDirection: "row",
-    position: "relative",
-    bottom: -26,
-  },
   bottomSubContainer: {
     flex: 1,
     alignItems: "center",
     width: "100%",
-    paddingTop: 48,
+    paddingTop: 60,
     paddingHorizontal: 24,
     backgroundColor: "#1A1A1A",
   },
@@ -49,5 +43,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderRadius: 100,
     color: "#D9D9D9",
+  },
+  tasksList: {
+    width: "100%",
+    marginTop: 20,
+    borderTopWidth: 1,
+    borderTopColor: "#333333",
   },
 });

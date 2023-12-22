@@ -5,10 +5,14 @@ import EmptyListImageSVG from "../EmptyListImageSVG";
 
 export default function ToDo() {
   return (
-    <View>
+    <View style={styles.container}>
       <EmptyListImageSVG />
-      <Text>Você ainda não tem tarefas cadastradas</Text>
-      <Text>Crie tarefas e organize seus itens a fazer</Text>
+      <Text style={styles.mainText}>
+        Você ainda não tem tarefas cadastradas
+      </Text>
+      <Text style={styles.subText}>
+        Crie tarefas e organize seus itens a fazer
+      </Text>
     </View>
   );
 }
