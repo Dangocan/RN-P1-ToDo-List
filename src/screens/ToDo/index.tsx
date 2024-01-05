@@ -80,7 +80,7 @@ export default function ToDo() {
         <FlatList
           style={styles.tasksList}
           data={tasks}
-          keyExtractor={(item, index) => `${item}-${index}`}
+          keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <TaskItem
               task={item}
