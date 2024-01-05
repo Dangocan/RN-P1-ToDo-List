@@ -32,20 +32,24 @@ export default function ToDo() {
   ]);
 
   const handleRemoveTask = (task: TTask) => {
-    Alert.alert("Remover tarefa", `Tem certeza que deseja esta tarefa?`, [
-      {
-        text: "Cancelar",
-        style: "cancel",
-      },
-      {
-        text: "Remover",
-        style: "destructive",
-        onPress: () =>
-          setTasks((prevState) =>
-            prevState.filter((item) => item.id !== task.id)
-          ),
-      },
-    ]);
+    Alert.alert(
+      "Remover tarefa",
+      `Tem certeza que deseja remover esta tarefa?`,
+      [
+        {
+          text: "Cancelar",
+          style: "cancel",
+        },
+        {
+          text: "Remover",
+          style: "destructive",
+          onPress: () =>
+            setTasks((prevState) =>
+              prevState.filter((item) => item.id !== task.id)
+            ),
+        },
+      ]
+    );
   };
 
   const handleTaskToggle = (task: TTask) => {
