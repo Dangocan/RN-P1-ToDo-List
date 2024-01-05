@@ -3,7 +3,9 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    marginTop: 48,
+    paddingTop: 48,
+    borderTopWidth: 1,
+    borderTopColor: "#333333",
   },
   mainText: {
     marginTop: 16,

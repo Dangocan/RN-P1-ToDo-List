@@ -47,7 +47,5 @@ export const styles = StyleSheet.create({
   tasksList: {
     width: "100%",
     marginTop: 20,
-    borderTopWidth: 1,
-    borderTopColor: "#333333",
   },
 });
